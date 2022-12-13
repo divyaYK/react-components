@@ -32,6 +32,10 @@
     }
   },
   "plugins": ["react", "@typescript-eslint"],
+  "globals": {
+    "React": true,
+    "JSX": true
+  },
   "rules": {
     "react/prop-types": 0,
     "react/react-in-jsx-scope": "off",
@@ -54,6 +58,7 @@
         "namedComponents": "arrow-function",
         "unnamedComponents": "arrow-function"
       }
-    ]
+    ],
+    "react/jsx-props-no-spreading": "off"
   }
 }

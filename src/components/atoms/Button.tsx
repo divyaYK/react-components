@@ -1,3 +1,13 @@
-const Button = () => <div>Button</div>;
+import React from "react";
 
-export default Button;
+export interface IButtonProps extends React.ComponentPropsWithoutRef<"button"> {
+  children: string | JSX.Element;
+}
+
+export const Button = React.forwardRef<HTMLButtonElement, IButtonProps>(
+  ({ children, ...props }) => (
+    <button type="button" {...props}>
+      {children}
+    </button>
+  ),
+);

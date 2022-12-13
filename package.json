@@ -29,7 +29,8 @@
   },
   "peerDependencies": {
     "react": "16.8.0 || >=18.x",
-    "react-dom": "16.8.0 || >=18.x"
+    "react-dom": "16.8.0 || >=18.x",
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@babel/core": "^7.20.5",
