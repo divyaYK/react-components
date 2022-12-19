@@ -3,7 +3,7 @@ import { StyledButton } from "./ButtonStyles";
 
 export interface IButtonProps extends React.ComponentPropsWithoutRef<"button"> {
   children: string | JSX.Element;
-  variant?: "primary" | "default";
+  variant?: "primary" | "primaryOutline";
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, IButtonProps>(

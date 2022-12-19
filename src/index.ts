@@ -1,4 +1,7 @@
-import Button from "./components/atoms/buttons/Button";
+/**
+ * React-Components
+ * @author divyaYK
+ * @overview exports all components created as part of this library
+ */
 
-const ButtonComponent = Button;
-export default ButtonComponent;
+export * from "./components/atoms/buttons/Button";

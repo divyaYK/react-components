@@ -24,6 +24,8 @@
   "module": "./dist/react-components.es.js",
   "types": "./dist/index.d.ts",
   "dependencies": {
+    "nanoid": "^4.0.0",
+    "polished": "^4.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

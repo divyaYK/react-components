@@ -1,14 +1,14 @@
 import styled, { css } from "styled-components";
 import { IButtonProps } from "./Button";
-import { PRIMARY_ORANGE, WHITE } from "../../../utils/constants";
+import { COLORS, typography } from "../../../shared/theme";
 
 const buttonColor = (p: IButtonProps) => {
-  let color = PRIMARY_ORANGE;
+  let color = COLORS.PRIMARY_ORANGE;
   let backgroundColor = "transparent";
 
   if (p.variant === "primary") {
-    color = WHITE;
-    backgroundColor = PRIMARY_ORANGE;
+    color = COLORS.WHITE;
+    backgroundColor = COLORS.PRIMARY_ORANGE;
   }
 
   return css`
@@ -33,6 +33,7 @@ export const StyledButton = styled.button<IButtonProps>`
   line-height: 1.5;
   border-radius: 100px;
   transition: all 0.15s ease-in-out;
+  font-family: ${typography.type};
 
   ${buttonColor}
 
