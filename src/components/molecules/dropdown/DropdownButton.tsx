@@ -12,7 +12,7 @@ interface IDropdownButton extends ComponentPropsWithoutRef<"button"> {
 }
 
 export const DropdownButton = forwardRef<HTMLButtonElement, IDropdownButton>(
-  ({ label }: IDropdownButton) => {
+  ({ label, ...props }: IDropdownButton) => {
     const { onClose, isOpen, id } = useContext(DropdownContext);
     return (
       <StyledDropdownButton
@@ -22,6 +22,7 @@ export const DropdownButton = forwardRef<HTMLButtonElement, IDropdownButton>(
         aria-haspopup="menu"
         aria-label={label}
         onClick={onClose}
+        {...props}
       >
         <StyledDropdownButtonLabel>{label}</StyledDropdownButtonLabel>
         <StyledDropdownIcon>

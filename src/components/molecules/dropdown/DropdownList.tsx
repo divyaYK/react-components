@@ -12,7 +12,7 @@ interface IDropdownList extends ComponentPropsWithoutRef<"ul"> {
 }
 
 export const DropdownList = forwardRef<HTMLUListElement, IDropdownList>(
-  ({ children }) => {
+  ({ children, ...props }) => {
     const { isOpen, id } = useContext(DropdownContext);
     return (
       <StyledDropdownList
@@ -20,6 +20,7 @@ export const DropdownList = forwardRef<HTMLUListElement, IDropdownList>(
         aria-orientation="vertical"
         role="menu"
         isOpen={isOpen}
+        {...props}
       >
         {children}
       </StyledDropdownList>

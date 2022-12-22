@@ -2,16 +2,14 @@ import styled, { keyframes } from "styled-components";
 import { COLORS, typography } from "../../../shared/theme";
 
 const popAnimation = keyframes`
-  @keyframes pop {
-    0% {
-      opacity: 0;
-    }
-    75% {
-      opacity: 1;
-    }
-    100% {
-      transform: scale(1.2);
-    }
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
   }
 `;
 

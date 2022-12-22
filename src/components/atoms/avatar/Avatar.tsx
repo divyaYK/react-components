@@ -1,6 +1,5 @@
 import { FC } from "react";
 import { AvatarSizes, StyledAvatar } from "./AvatarStyles";
-import UserFallback from "../../../assets/user-default.png";
 
 export interface IAvatarProps {
   src?: string;
@@ -13,7 +12,7 @@ export const Avatar: FC<IAvatarProps> = ({
   size,
   username,
 }: IAvatarProps) => {
-  let avatarImage = <img src={UserFallback} alt={username} />;
+  let avatarImage = <img src="/assets/user-default.png" alt={username} />;
   if (src) {
     avatarImage = <img src={src} alt={username} />;
   }
@@ -26,7 +25,7 @@ export const Avatar: FC<IAvatarProps> = ({
 };
 
 Avatar.defaultProps = {
-  src: UserFallback,
+  src: "/assets/user-default.png",
   size: "medium",
   username: "not found",
 };

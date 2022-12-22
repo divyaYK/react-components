@@ -11,5 +11,6 @@ export const StyledBadge = styled.span`
   font-family: ${typography.type};
   padding: 0.4rem 0.8rem;
   color: ${COLORS.BADGE_COLOR};
+  margin: 0.5rem;
   background-color: ${rgba(COLORS.BADGE_COLOR, 0.2)};
 `;

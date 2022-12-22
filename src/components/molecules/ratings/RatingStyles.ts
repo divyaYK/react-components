@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { COLORS, typography } from "../../../shared/theme";
 
-export const StyledAddRatingGroup = styled.div`
+export const StyledShowRatingGroup = styled.div`
   display: inline-flex;
   color: ${COLORS.RATING};
   font-size: 1.2rem;
@@ -12,3 +12,7 @@ export const StyledAddRatingGroup = styled.div`
 `;
 
 // ICON COLOR IS RATING and DARK GRAY
+
+export const StyledShowRatingSpan = styled.span`
+  margin-left: 0.5rem;
+`;

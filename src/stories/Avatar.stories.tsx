@@ -1,6 +1,5 @@
 import { FC } from "react";
 import { Avatar, IAvatarProps } from "../components/atoms/avatar/Avatar";
-import UserFallback from "../assets/user-default.png";
 
 export default {
   title: "Avatar",
@@ -9,7 +8,7 @@ export default {
 
 const AvatarBase: FC<IAvatarProps> = ({ src, ...props }) => (
   <div>
-    <Avatar src={src || UserFallback} {...props} />
+    <Avatar src={src || "/assets/user-default.png"} {...props} />
   </div>
 );
 
