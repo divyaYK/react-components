@@ -16,6 +16,7 @@ jobs:
           registry-url: "https://npm.pkg.github.com"
           scope: "@divyaYK"
       - run: yarn
+      - run: yarn add --peer styled-components
       - run: yarn format
       - run: yarn lint
       - run: yarn build
