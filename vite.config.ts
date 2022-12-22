@@ -19,6 +19,7 @@ export default defineConfig((configEnv) => ({
     }),
     dts({
       insertTypesEntry: true,
+      include: ["src/*"],
     }),
   ],
   build: {
@@ -30,13 +31,6 @@ export default defineConfig((configEnv) => ({
     },
     rollupOptions: {
       external: [...Object.keys(peerDependencies)],
-      output: {
-        globals: {
-          react: "React",
-          "react-dom": "ReactDOM",
-          "styled-components": "styled",
-        },
-      },
     },
   },
 }));
