@@ -1,7 +1,7 @@
 {
   "name": "@divyaYK/react-components",
   "private": false,
-  "version": "0.2.2",
+  "version": "0.2.4",
   "type": "module",
   "scripts": {
     "storybook": "start-storybook -p 6006",
@@ -72,6 +72,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/divyaYK/react-components"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/divyaYK"
   },
   "keywords": [],
   "author": "@divyaYK",
