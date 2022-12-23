@@ -6,7 +6,6 @@ import EsLint from "vite-plugin-linter";
 import tsConfigPaths from "vite-tsconfig-paths";
 
 const { EsLinter, linterPlugin } = EsLint;
-import { peerDependencies } from "./package.json";
 
 // https://vitejs.dev/config/
 export default defineConfig((configEnv) => ({
@@ -19,7 +18,6 @@ export default defineConfig((configEnv) => ({
     }),
     dts({
       insertTypesEntry: true,
-      include: ["src/*"],
     }),
   ],
   build: {
@@ -30,7 +28,14 @@ export default defineConfig((configEnv) => ({
       fileName: (format) => `react-components.${format}.js`,
     },
     rollupOptions: {
-      external: [...Object.keys(peerDependencies)],
+      external: ["react", "react-dom", "styled-components"],
+      output: {
+        globals: {
+          react: "React",
+          "react-dom": "ReactDOM",
+          "styled-components": "styled",
+        },
+      },
     },
   },
 }));

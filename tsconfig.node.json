@@ -8,5 +8,6 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true
   },
-  "include": ["vite.config.ts", "package.json"]
+  "include": ["vite.config.ts", "package.json"],
+  "exclude": ["**/*.spec.*", "**/*.stories.*"]
 }
