@@ -1,4 +1,6 @@
-import { ComponentPropsWithoutRef, FC, forwardRef, ReactNode } from "react";
+import {
+  ComponentPropsWithoutRef, FC, forwardRef, ReactNode,
+} from "react";
 import { StyledCheckbox } from "./CheckboxStyles";
 
 export interface ICheckboxProps {
