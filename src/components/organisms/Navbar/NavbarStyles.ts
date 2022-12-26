@@ -1,11 +1,40 @@
 import styled from "styled-components";
 import { COLORS, typography } from "../../../shared/theme";
 
+/**
+ * @name StyledNavBrand
+ * @description Styled Navbar Brand for logo display
+ */
 export const StyledNavBrand = styled.div``;
+
+/**
+ * @name StyledNavContent
+ * @description Styled Navbar Content component for wrapping the content of the navigation bar
+ */
 export const StyledNavContent = styled.div``;
+
+/**
+ * @name StyledNavList
+ * @description Styled Navbar List component
+ */
 export const StyledNavList = styled.ul``;
+
+/**
+ * @name StyledNavListItem
+ * @description Styled Navbar List Item component
+ */
 export const StyledNavListItem = styled.li``;
+
+/**
+ * @name StyledNavFooter
+ * @description Styled Navbar Footer component for wrapping the footer content of the navigation bar
+ */
 export const StyledNavFooter = styled.div``;
+
+/**
+ * @name StyledNavLink
+ * @description Styled Navbar Link Component
+ */
 export const StyledNavLink = styled.a`
   text-decoration: none;
   color: ${COLORS.WHITE};
@@ -16,6 +45,10 @@ export interface IStyledNavCollapseButton {
   color: string;
   isRounded: boolean;
 }
+/**
+ * @name StyledNavCollapseButton
+ * @description Styled Navbar Collapse Button component for collapsing the navigation bar.
+ */
 export const StyledNavCollapseButton = styled.button<IStyledNavCollapseButton>`
   box-sizing: border-box;
   cursor: pointer;
@@ -27,6 +60,10 @@ export const StyledNavCollapseButton = styled.button<IStyledNavCollapseButton>`
 export interface IDisplayProps {
   isOpen: boolean;
 }
+/**
+ * @name StyledNavbarWrapper
+ * @description Styled Navbar Wrapper that wraps all Navbar Content.
+ */
 export const StyledNavbarWrapper = styled.nav<IDisplayProps>`
   display: ${(props) => (props.isOpen ? "flex" : "none")};
   flex-direction: column;

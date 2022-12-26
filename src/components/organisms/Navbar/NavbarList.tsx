@@ -5,8 +5,15 @@ interface INavbarListProps extends ComponentPropsWithoutRef<"ul"> {
   children: ReactNode | ReactNode[];
 }
 
+/**
+ * List component for Navigation bar.
+ * @memberof Navbar
+ * @exports NavbarList
+ */
 export const NavbarList = forwardRef<HTMLUListElement, INavbarListProps>(
-  ({ children, ...props }) => (
-    <StyledNavList {...props}>{children}</StyledNavList>
+  ({ children, ...props }, ref) => (
+    <StyledNavList ref={ref} {...props}>
+      {children}
+    </StyledNavList>
   ),
 );

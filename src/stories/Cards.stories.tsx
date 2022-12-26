@@ -1,5 +1,5 @@
 import { Meta } from "@storybook/react";
-import Card from "../components/organisms/cards/Card";
+import { Card } from "../components/organisms/cards/Card";
 import { Badge } from "../components/atoms/badges/Badge";
 
 export default {

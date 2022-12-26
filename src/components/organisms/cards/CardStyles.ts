@@ -1,16 +1,66 @@
 import styled from "styled-components";
 import { COLORS, typography } from "../../../shared/theme";
 
+/**
+ * @name StyledCardCoverImage
+ * @description Styled Card Cover Image for user's cover image.
+ */
 export const StyledCardCoverImage = styled.img``;
+
+/**
+ * @name StyledCardProfileImage
+ * @description Styled Card Profile Image for user's profile image.
+ */
 export const StyledCardProfileImage = styled.img``;
+
+/**
+ * @name StyledCardBody
+ * @description Styled Card Body wraps all card body contents
+ */
 export const StyledCardBody = styled.div``;
+
+/**
+ * @name StyledCardTitle
+ * @description Styled Card Title for user's name or card title
+ */
 export const StyledCardTitle = styled.div``;
+
+/**
+ * @name StyledCardSubtitle
+ * @description Styled Card Subtitle for user's pod or card's subtitle
+ */
 export const StyledCardSubtitle = styled.div``;
+
+/**
+ * @name StyledCardMetadata
+ * @description Styled Card Meta data for adding more card data apart from description
+ */
 export const StyledCardMetadata = styled.div``;
+
+/**
+ * @name StyledCardDescription
+ * @description Styled Card Description for card's description
+ */
 export const StyledCardDescription = styled.p``;
+
+/**
+ * @name StyledCardFooter
+ * @description Styled Card Footer wraps all footer contents
+ */
 export const StyledCardFooter = styled.div``;
+
+/**
+ * @name StyledCardHeader
+ * @description Styled Card Header wraps all header content
+ */
 export const StyledCardHeader = styled.div``;
 
+/**
+ * @name StyledCardWrapper
+ * @description Styled Card Wrapper wraps all card contents
+ * - contains all styles and child elements
+ * - child element styles won't reflect without this wrapper.
+ */
 export const StyledCardWrapper = styled.div`
   overflow: hidden;
   margin: 1rem;
@@ -28,7 +78,6 @@ export const StyledCardWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid transparent;
 
     & ${StyledCardCoverImage} {
       width: 100%;

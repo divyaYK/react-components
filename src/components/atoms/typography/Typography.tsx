@@ -1,58 +1,54 @@
 import { ReactNode, ComponentPropsWithoutRef, forwardRef } from "react";
-import {
-  IHeaderProps,
-  ITextProps,
-  StyledHeaders,
-  StyledText,
-} from "./TypeStyles";
+import { HeaderStyles, StyledHeaders, StyledText } from "./TypeStyles";
+import { COLORS } from "../../../shared/theme";
+
+export interface IHeaderProps {
+  variant: keyof typeof HeaderStyles;
+}
+export interface ITextProps {
+  fontSize?: number | string;
+  fontWeight?: number | string;
+  color?: string;
+}
 
 interface IHeaderComponentProps
   extends IHeaderProps,
     ComponentPropsWithoutRef<"p"> {
-  text?: string;
-  children?: ReactNode | ReactNode[];
+  children: ReactNode | ReactNode[] | JSX.Element;
 }
 
-export const Header = ({
-  variant,
-  text,
-  children,
-  ...props
-}: IHeaderComponentProps) => {
-  if (children) {
-    return (
-      <StyledHeaders {...props} variant={variant}>
-        {children}
-      </StyledHeaders>
-    );
-  }
-  return (
-    <StyledHeaders {...props} variant={variant}>
-      {text}
+/**
+ * Header component - refers to all header elements
+ * @memberof Atoms
+ * @exports Header
+ */
+export const Header = forwardRef<HTMLParagraphElement, IHeaderComponentProps>(
+  ({ variant, children, ...props }, ref) => (
+    <StyledHeaders as={variant} ref={ref} {...props} variant={variant}>
+      {children}
     </StyledHeaders>
-  );
-};
-
-Header.defaultProps = {
-  text: "",
-  children: [],
-};
+  ),
+);
 
 interface ITextComponentProps extends ITextProps {
-  text?: string;
-  children?: ReactNode | ReactNode[];
+  children: ReactNode | ReactNode[] | JSX.Element;
 }
 
+/**
+ * Text component - refers to paragraph element
+ * @memberof Atoms
+ * @exports Text
+ */
 export const Text = forwardRef<HTMLParagraphElement, ITextComponentProps>(
-  ({ children, text, ...props }) => {
-    if (children) {
-      return <StyledText {...props}>{children}</StyledText>;
-    }
-    return <StyledText {...props}>{text}</StyledText>;
-  },
+  ({ children, ...props }, ref) => (
+    <StyledText ref={ref} {...props}>
+      {children}
+    </StyledText>
+  ),
 );
 
 Text.defaultProps = {
-  text: "",
-  children: undefined,
+  fontSize: "1rem",
+  fontWeight: 400,
+  color: COLORS.LIGHT_TEXT,
 };

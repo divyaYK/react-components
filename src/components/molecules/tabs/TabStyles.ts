@@ -2,12 +2,16 @@ import styled from "styled-components";
 import { rgba } from "polished";
 import { COLORS, typography } from "../../../shared/theme";
 
+/**
+ * @name StyledTab
+ * @description Styled Tab to switch views
+ */
 export const StyledTab = styled.div`
   box-sizing: border-box;
   padding: 0.5rem 1rem;
   font-family: ${typography.type};
   font-size: 1.2rem;
-  color: ${COLORS.PRIMARY_ORANGE};
+  color: ${COLORS.LIGHT_TEXT};
   border-bottom: 3px solid transparent;
   cursor: pointer;
   text-transform: capitalize;
@@ -19,9 +23,14 @@ export const StyledTab = styled.div`
 
   &.active {
     border-bottom-color: ${COLORS.PRIMARY_ORANGE};
+    color: ${COLORS.PRIMARY_ORANGE};
   }
 `;
 
+/**
+ * @name StyledTabGroup
+ * @description Styled Tab Group that wraps all tabs
+ */
 export const StyledTabGroup = styled.div`
   display: flex;
   align-items: center;

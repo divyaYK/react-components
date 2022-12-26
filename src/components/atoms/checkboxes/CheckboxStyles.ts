@@ -13,11 +13,24 @@ const popAnimation = keyframes`
   }
 `;
 
+/**
+ * @name StyledLabel
+ * @description Styled label component for Checkbox
+ */
 const StyledLabel = styled.label`
   cursor: pointer;
 `;
+
+/**
+ * @name StyledLabelSpan
+ * @description Styled Span component for Checkbox. Created for implementing check animation.
+ */
 const StyledLabelSpan = styled.span``;
 
+/**
+ * @name StyledCheckboxWrapper
+ * @description Styled wrapping Div for Checkbox.
+ */
 const StyledCheckboxWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -30,6 +43,10 @@ const StyledCheckboxWrapper = styled.div`
   box-sizing: border-box;
 `;
 
+/**
+ * @name StyledCheckboxInput
+ * @description Styled Input component for Checkbox.
+ */
 const StyledCheckboxInput = styled.input`
   display: none;
 
@@ -68,6 +85,12 @@ const StyledCheckboxInput = styled.input`
   }
 `;
 
+/**
+ * @module StyledCheckbox
+ * @name StyledCheckbox
+ * @description Styled Checkbox children for Checkboxes
+ * @exports StyledLabel, StyledCheckboxInput, StyledCheckboxWrapper, StyledLabelSpan
+ */
 export const StyledCheckbox = {
   Label: StyledLabel,
   Input: StyledCheckboxInput,

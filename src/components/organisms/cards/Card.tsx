@@ -22,71 +22,131 @@ interface ICardText extends ComponentPropsWithoutRef<"p"> {
   children: ReactNode | ReactNode[] | string;
 }
 
-interface ICardImgProps extends ComponentPropsWithoutRef<"img"> {
+export interface ICardImgProps extends ComponentPropsWithoutRef<"img"> {
   src?: string;
   alt?: string;
 }
 
+/**
+ * Card Header Component wraps cover image and profile image.
+ * @memberof Card
+ * @exports CardHeader
+ */
 const CardHeader = forwardRef<HTMLDivElement, ICardProps>(
-  ({ children, ...props }) => (
-    <StyledCardHeader {...props}>{children}</StyledCardHeader>
+  ({ children, ...props }, ref) => (
+    <StyledCardHeader ref={ref} {...props}>
+      {children}
+    </StyledCardHeader>
   ),
 );
 
-const CardCoverImage = forwardRef<HTMLImageElement, ICardImgProps>((props) => (
-  <StyledCardCoverImage {...props} />
-));
+/**
+ * Card Cover Image
+ * @memberof Card
+ * @exports CardCoverImage
+ */
+const CardCoverImage = forwardRef<HTMLImageElement, ICardImgProps>(
+  (props, ref) => <StyledCardCoverImage ref={ref} {...props} />,
+);
 
 CardCoverImage.defaultProps = {
   src: "/assets/cover_img.jpg",
   alt: "default cover image",
 };
 
+/**
+ * Card Profile Image
+ * @memberof Card
+ * @exports CardProfileImage
+ */
 const CardProfileImage = forwardRef<HTMLImageElement, ICardImgProps>(
-  (props) => <StyledCardProfileImage {...props} />,
+  (props, ref) => <StyledCardProfileImage ref={ref} {...props} />,
 );
 
 CardProfileImage.defaultProps = {
-  src: "/assets/user-default.png",
+  src: "/assets/user-default.jpg",
   alt: "default profile picture",
 };
 
+/**
+ * Card Body wraps all body content
+ * @memberof Card
+ * @exports CardBody
+ */
 const CardBody = forwardRef<HTMLDivElement, ICardProps>(
-  ({ children, ...props }) => (
-    <StyledCardBody {...props}>{children}</StyledCardBody>
+  ({ children, ...props }, ref) => (
+    <StyledCardBody ref={ref} {...props}>
+      {children}
+    </StyledCardBody>
   ),
 );
+
+/**
+ * Card Footer wraps all footer content
+ * @memberof Card
+ * @exports CardFooter
+ */
 const CardFooter = forwardRef<HTMLDivElement, ICardProps>(
-  ({ children, ...props }) => (
-    <StyledCardFooter {...props}>{children}</StyledCardFooter>
+  ({ children, ...props }, ref) => (
+    <StyledCardFooter ref={ref} {...props}>
+      {children}
+    </StyledCardFooter>
   ),
 );
 
+/**
+ * Card Metadata wraps all Metadata content
+ * @memberof Card
+ * @exports CardMetadata
+ */
 const CardMetadata = forwardRef<HTMLDivElement, ICardProps>(
-  ({ children, ...props }) => (
-    <StyledCardMetadata {...props}>{children}</StyledCardMetadata>
+  ({ children, ...props }, ref) => (
+    <StyledCardMetadata ref={ref} {...props}>
+      {children}
+    </StyledCardMetadata>
   ),
 );
 
+/**
+ * Card Title
+ * @memberof Card
+ * @exports CardTitle
+ */
 const CardTitle = forwardRef<HTMLDivElement, ICardProps>(
-  ({ children, ...props }) => (
-    <StyledCardTitle {...props}>{children}</StyledCardTitle>
+  ({ children, ...props }, ref) => (
+    <StyledCardTitle ref={ref} {...props}>
+      {children}
+    </StyledCardTitle>
   ),
 );
 
+/**
+ * Card Subtitle
+ * @memberof Card
+ * @exports CardSubtitle
+ */
 const CardSubtitle = forwardRef<HTMLDivElement, ICardProps>(
-  ({ children, ...props }) => (
-    <StyledCardSubtitle {...props}>{children}</StyledCardSubtitle>
+  ({ children, ...props }, ref) => (
+    <StyledCardSubtitle ref={ref} {...props}>
+      {children}
+    </StyledCardSubtitle>
   ),
 );
 
+/**
+ * Card Description
+ * @memberof Card
+ * @exports CardDescription
+ */
 const CardDescription = forwardRef<HTMLDivElement, ICardText>(
-  ({ children, ...props }) => (
-    <StyledCardDescription {...props}>{children}</StyledCardDescription>
+  ({ children, ...props }, ref) => (
+    <StyledCardDescription ref={ref} {...props}>
+      {children}
+    </StyledCardDescription>
   ),
 );
 
-interface ICardCompositionProps {
+export interface ICardCompositionProps {
   Header: typeof CardHeader;
   Body: typeof CardBody;
   Footer: typeof CardFooter;
@@ -98,7 +158,15 @@ interface ICardCompositionProps {
   ProfileImage: typeof CardProfileImage;
 }
 
-const Card: FC<ICardProps> & ICardCompositionProps = ({
+/**
+ * @module Card
+ * Card Components for user cards.
+ * @memberof Organisms
+ * @exports Card, Header, Body, Footer,
+ * Title, Subtitle, Description, Metadata,
+ * CoverImage, ProfileImage
+ */
+export const Card: FC<ICardProps> & ICardCompositionProps = ({
   children,
   ...props
 }) => <StyledCardWrapper {...props}>{children}</StyledCardWrapper>;
@@ -112,5 +180,3 @@ Card.Subtitle = CardSubtitle;
 Card.Description = CardDescription;
 Card.CoverImage = CardCoverImage;
 Card.ProfileImage = CardProfileImage;
-
-export default Card;

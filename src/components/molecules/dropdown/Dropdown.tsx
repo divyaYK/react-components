@@ -18,6 +18,11 @@ interface IDropdownCompositionProps {
   Item: typeof DropdownListItem;
 }
 
+/**
+ * Dropdown Provider component of Dropdown.
+ * @memberof Molecules
+ * @exports Dropdown
+ */
 export const Dropdown: FC<IDropdownComponentProps> &
   IDropdownCompositionProps = ({ children }) => {
     const [isOpen, setIsOpen] = useState(false);

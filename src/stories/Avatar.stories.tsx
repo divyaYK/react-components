@@ -8,7 +8,7 @@ export default {
 
 const AvatarBase: FC<IAvatarProps> = ({ src, ...props }) => (
   <div>
-    <Avatar src={src || "/assets/user-default.png"} {...props} />
+    <Avatar src={src || "/assets/user-default.jpg"} {...props} />
   </div>
 );
 

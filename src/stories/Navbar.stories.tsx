@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { nanoid } from "nanoid";
 import { Meta } from "@storybook/react";
-import { Navbar } from "../components/organisms/verticalNav/VerticalNavbar";
+import { Navbar } from "../components/organisms/Navbar/VerticalNavbar";
 import { COLORS } from "../shared/theme";
 import { Icon } from "../components/atoms/icons/Icon";
 

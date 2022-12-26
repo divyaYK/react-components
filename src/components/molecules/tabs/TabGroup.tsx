@@ -5,6 +5,11 @@ interface ITabGroupProps extends ComponentPropsWithoutRef<"div"> {
   children: ReactNode | ReactNode[];
 }
 
+/**
+ * TabGroup Component that wraps all tabs.
+ * @memberof Molecules
+ * @exports TabGroup
+ */
 export const TabGroup = forwardRef<HTMLDivElement, ITabGroupProps>(
   ({ children, ...props }) => (
     <StyledTabGroup {...props}>{children}</StyledTabGroup>

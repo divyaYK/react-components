@@ -9,8 +9,8 @@ export default {
   component: Checkbox,
 } as Meta;
 
-export const Template = (args: ICheckboxProps) => <Checkbox {...args} />;
-Template.args = {
+export const Basic = (args: ICheckboxProps) => <Checkbox {...args} />;
+Basic.args = {
   label: "Click Me!",
   id: "random",
 };

@@ -13,15 +13,21 @@ import { NavbarContext } from "./NavbarContext";
 interface INavbarButtonProps
   extends ComponentPropsWithoutRef<"button">,
     IStyledNavCollapseButton {
-  children: ReactNode | ReactNode[];
+  children: ReactNode | ReactNode[] | JSX.Element;
   color: string;
 }
 
-export const NavbarButton = forwardRef<HTMLDivElement, INavbarButtonProps>(
-  ({ children, ...props }) => {
+/**
+ * Button component for Navigation bar.
+ * @memberof Navbar
+ * @exports NavbarButton
+ */
+export const NavbarButton = forwardRef<HTMLButtonElement, INavbarButtonProps>(
+  ({ children, ...props }, ref) => {
     const { isOpen, onClose, id } = useContext(NavbarContext);
     return (
       <StyledNavCollapseButton
+        ref={ref}
         aria-controls={id}
         aria-expanded={isOpen}
         onClick={onClose}

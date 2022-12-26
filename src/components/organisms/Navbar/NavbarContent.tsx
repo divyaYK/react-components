@@ -5,8 +5,15 @@ interface INavbarContentProps extends ComponentPropsWithoutRef<"div"> {
   children: ReactNode | ReactNode[];
 }
 
+/**
+ * Navbar Content component wraps the list component of navbar.
+ * @memberof Navbar
+ * @exports NavbarContent
+ */
 export const NavbarContent = forwardRef<HTMLDivElement, INavbarContentProps>(
-  ({ children, ...props }) => (
-    <StyledNavContent {...props}>{children}</StyledNavContent>
+  ({ children, ...props }, ref) => (
+    <StyledNavContent ref={ref} {...props}>
+      {children}
+    </StyledNavContent>
   ),
 );

@@ -7,6 +7,11 @@ export interface INavbarProps {
   id: string;
 }
 
+/**
+ * Context of Navbar for opening and closing the Navigation bar and storing ID.
+ * @memberof Organisms
+ * @exports NavbarContext
+ */
 export const NavbarContext = createContext<INavbarProps>({
   isOpen: false,
   onClose: () => undefined,

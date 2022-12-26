@@ -1,7 +1,14 @@
 import styled from "styled-components";
+import { rgba } from "polished";
 import { COLORS } from "../../../shared/theme";
 
-export const StyledInput = styled.input`
+/**
+ * @name StyledInput
+ * @description Styled input of text or number type.
+ */
+export const StyledInput = styled.input.attrs((props) => ({
+  type: props.type,
+}))`
   &::placeholder {
     color: ${COLORS.LIGHT_TEXT};
   }
@@ -18,6 +25,6 @@ export const StyledInput = styled.input`
   position: relative;
 
   &:focus {
-    border-color: ${COLORS.DARK_GRAY};
+    border-color: ${rgba(COLORS.SECONDARY_BLACK, 0.2)};
   }
 `;

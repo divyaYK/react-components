@@ -5,14 +5,14 @@ import { StyledCheckbox } from "./CheckboxStyles";
 
 export interface ICheckboxProps {
   id: string;
-  label: ReactNode | ReactNode[];
+  label: ReactNode | ReactNode[] | JSX.Element;
 }
 
 const CheckboxLabel = forwardRef<
   HTMLLabelElement,
   ComponentPropsWithoutRef<"label">
->((props) => (
-  <StyledCheckbox.Label {...props}>
+>((props, ref) => (
+  <StyledCheckbox.Label ref={ref} {...props}>
     <StyledCheckbox.Span />
     {props.children}
   </StyledCheckbox.Label>
@@ -21,8 +21,13 @@ const CheckboxLabel = forwardRef<
 const CheckboxInput = forwardRef<
   HTMLInputElement,
   ComponentPropsWithoutRef<"input">
->((props) => <StyledCheckbox.Input {...props} />);
+>((props, ref) => <StyledCheckbox.Input ref={ref} {...props} />);
 
+/**
+ * Checkbox component.
+ * @memberof Atoms
+ * @exports Checkbox
+ */
 export const Checkbox: FC<
   ICheckboxProps & Omit<ComponentPropsWithoutRef<"input">, "type">
 > = ({ id, label, ...props }) => (

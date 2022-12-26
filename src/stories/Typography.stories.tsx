@@ -1,13 +1,17 @@
 import { Meta } from "@storybook/react";
-import { Header, Text } from "../components/atoms/typography/Typography";
+import {
+  Header,
+  ITextProps,
+  Text,
+} from "../components/atoms/typography/Typography";
 import { COLORS } from "../shared/theme";
 
 export default {
   title: "Typography",
-  component: Header,
+  decorators: [(story) => <div className="">{story()}</div>],
 } as Meta;
 
-export const All = () => (
+export const AllHeaders = () => (
   <>
     <Header variant="h1">
       Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -29,10 +33,19 @@ export const All = () => (
     </Header>
   </>
 );
+AllHeaders.displayName = "All Headers";
 
-export const NormalText = () => (
-  <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit.</Text>
+export const NormalText = (props: ITextProps) => (
+  <Text {...props}>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+  </Text>
 );
+
+NormalText.args = {
+  color: COLORS.LIGHT_TEXT,
+  fontSize: 16,
+  fontWeight: 500,
+};
 
 export const Subtitle = () => (
   <Text color={COLORS.PRIMARY_ORANGE}>

@@ -1,31 +1,30 @@
 import { FC } from "react";
-import { AvatarSizes, StyledAvatar } from "./AvatarStyles";
+import { IStyledAvatarProps, StyledAvatar } from "./AvatarStyles";
 
-export interface IAvatarProps {
+export interface IAvatarProps extends IStyledAvatarProps {
   src?: string;
-  size?: keyof typeof AvatarSizes;
   username?: string;
 }
 
+/**
+ * Rounded Avatar component that displays profile picture.
+ * @memberof Atoms
+ * @exports Avatar
+ */
 export const Avatar: FC<IAvatarProps> = ({
   src,
   size,
   username,
 }: IAvatarProps) => {
-  let avatarImage = <img src="/assets/user-default.png" alt={username} />;
+  let avatarImage = <img src="/assets/user-default.jpg" alt="user" />;
   if (src) {
     avatarImage = <img src={src} alt={username} />;
   }
 
-  return (
-    <StyledAvatar size={size} src={src} username={username}>
-      {avatarImage}
-    </StyledAvatar>
-  );
+  return <StyledAvatar size={size}>{avatarImage}</StyledAvatar>;
 };
 
 Avatar.defaultProps = {
-  src: "/assets/user-default.png",
-  size: "medium",
+  src: "/assets/user-default.jpg",
   username: "not found",
 };

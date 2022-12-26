@@ -1,9 +1,5 @@
 import {
-  FC,
-  ReactNode,
-  useCallback,
-  useMemo,
-  useState,
+  FC, ReactNode, useCallback, useMemo, useState,
 } from "react";
 import { nanoid } from "nanoid";
 import { NavbarContext } from "./NavbarContext";
@@ -30,6 +26,12 @@ interface INavbarCompositionProps {
   Footer: typeof NavbarFooter;
   Wrapper: typeof NavbarWrapper;
 }
+
+/**
+ * Navbar Provider & Composition component for Navigation bar.
+ * @memberof Organisms
+ * @exports Navbar
+ */
 export const Navbar: FC<INavbarComponentProps> & INavbarCompositionProps = ({
   children,
 }) => {

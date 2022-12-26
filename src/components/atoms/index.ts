@@ -1,3 +1,8 @@
+/**
+ * Atoms module that exports all atom level components
+ * @module Atoms
+ */
+
 export * from "./avatar/Avatar";
 export * from "./buttons/Button";
 export * from "./badges/Badge";

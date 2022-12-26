@@ -1,10 +1,18 @@
 import styled from "styled-components";
 import { COLORS } from "../../../shared/theme";
 
+/**
+ * @name StyledDropdownWrapper
+ * @description Styled Dropdown wrapper that's native to the list
+ */
 export const StyledDropdownWrapper = styled.div`
   position: relative;
 `;
 
+/**
+ * @name StyledDropdownButton
+ * @description Styled Dropdown Menu button
+ */
 export const StyledDropdownButton = styled.button`
   display: inline-flex;
   padding: 0.5rem;
@@ -28,6 +36,10 @@ export interface IListProps {
   isOpen: boolean;
 }
 
+/**
+ * @name StyledDropdownList
+ * @description Styled Dropdown List
+ */
 export const StyledDropdownList = styled.ul<IListProps>`
   display: ${(props) => (props.isOpen ? "block" : "none")};
   box-sizing: border-box;
@@ -50,6 +62,10 @@ export const StyledDropdownList = styled.ul<IListProps>`
   }
 `;
 
+/**
+ * @name StyledDropdownListItem
+ * @description Styled Dropdown List Item
+ */
 export const StyledDropdownListItem = styled.li`
   padding: 0.5rem;
   margin: 0;
@@ -65,12 +81,20 @@ export const StyledDropdownListItem = styled.li`
   }
 `;
 
+/**
+ * @name StyledDropdownButtonLabel
+ * @description Styled Dropdown Menu Button Label
+ */
 export const StyledDropdownButtonLabel = styled.div`
   flex-grow: 1;
   text-align: left;
   margin-right: 1.5rem;
 `;
 
+/**
+ * @name StyledDropdownIcon
+ * @description Styled Dropdown Menu Button Icon
+ */
 export const StyledDropdownIcon = styled.div`
   padding: 0 0.8rem;
   margin: 0;
