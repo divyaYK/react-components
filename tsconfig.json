@@ -20,5 +20,6 @@
     }
   },
   "include": ["src"],
+  "exclude": ["**/*.spec.*", "**/*.stories.*"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
