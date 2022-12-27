@@ -16,3 +16,5 @@ jobs:
         with:
           path: storybook-static
           build_command: yarn build-storybook
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
